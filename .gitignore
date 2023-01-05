@@ -1,3 +1,5 @@
 *.exe
-*_*_*_solving.cpp
+bj_*_*_solving.cpp
+swea_*_*_solving.cpp
+pg_*_solving.cpp
 .vscode/
