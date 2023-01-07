@@ -1,27 +1,26 @@
 #include<bits/stdc++.h>
+#define fastio ios::sync_with_stdio(false), cin.tie(0);
 using namespace std;
 typedef pair<int,int> pii;
 #define A first
 #define B second
-pii score[100000];
-int localhigh[100000];
+pii rnk[100000];
 int T,n, ret;
 int main(){
-    scanf("%d", &T);
+    fastio;
+    cin>>T;
     while(T--){
-        scanf("%d", &n);
+        cin>>n;
         ret=n;
         for(int i=0; i<n; i++){
-            scanf("%d %d", &(score[i].A),&(score[i].B));
+            cin>>rnk[i].A>>rnk[i].B;
         }
-        sort(score, score+n, greater<>());
-        localhigh[n-1]=score[n-1].B; //localmax[k]: k~n-1범위에서의 최댓값
-        for(int i=n-1; i>0; i--){
-            localhigh[i-1]=min(localhigh[i], score[i-1].B);
+        sort(rnk, rnk+n);
+        int localhigh=rnk[0].B;
+        for(int i=1; i<n; i++){
+            if(localhigh<rnk[i].B) ret--;
+            else localhigh = rnk[i].B;
         }
-        for(int i=0; i<n-1; i++){
-            if(score[i].B>localhigh[i+1]) ret--;
-        }
-        printf("%d\n", ret);
+        cout<<"%d\n";
     }
 }
