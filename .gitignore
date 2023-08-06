@@ -1,6 +1,14 @@
-*.exe
-bj_*_*_solving.cpp
-bj_*_*_solving
-swea_*_*_solving.cpp
-pg_*_solving.cpp
+# solving
+*_solving.cpp
+
+# executable
+
+# VSCode
 .vscode/
+
+# CLion
+.idea
+cmake-build-debug
+CMakeLists.txt
+*.xml
+*.iml
