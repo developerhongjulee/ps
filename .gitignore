@@ -1,7 +1,9 @@
+# executable
+bj_[0-9]*_*
+!bj_[0-9]*_*.cpp
+
 # solving
 *_solving.cpp
-
-# executable
 
 # VSCode
 .vscode/
