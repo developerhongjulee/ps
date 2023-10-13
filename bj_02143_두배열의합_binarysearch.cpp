@@ -4,6 +4,11 @@ using namespace std;
 int32_t T, n,m,psum_a[1001],psum_b[1001];
 vector<int32_t> a,b;
 map<int64_t,int> numOfX;
+void swap(vector<int32_t>& v1, vector<int32_t>& v2){
+    vector<int32_t>& tmp=v1;
+    v1=v2;
+    v2=tmp;
+}
 int bsearch_l(int64_t x,vector<int32_t>& v){
     int l=0, r=v.size();
     while(l<r){
@@ -54,6 +59,7 @@ int main(){
     }
     sort(a.begin(), a.end());
     sort(b.begin(), b.end());
+    if(a.size()>b.size()) swap(a,b);
 
     int64_t ret=0;
     for(int32_t avalue: a) ret+=getNumOfX((int64_t)T-avalue,b);
